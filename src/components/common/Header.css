@@ -1,3 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 .navbar-brand .logo{
     max-width: 200px;
 }
+
+.navbar-nav{
+    display: flex;
+    align-items: center;
+}
+
+.nav-item .btn{
+    border-radius: 30px;
+    padding: 10px 25px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    min-width: 100px;
+}
+
+.signup-btn{
+    background-color: #f91944;
+    color: white !important;
+}
+
+.login-btn{
+    background-color: rgb(241, 241, 241);
+    color: black !important;
+}
+
+@media (min-width: 991px) {
+    .nav-item .login-btn{
+        margin-right: 10px;
+    }
+    .nav-item .cart-icon{
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 990px) {
+    .nav-item .btn{
+        margin-top: 10px;
+    }
+}
+

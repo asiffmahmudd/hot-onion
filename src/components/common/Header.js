@@ -2,12 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../images/logo2.png';
 import './Header.css';
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 const Header = () => {
     return (
         <header>
             <div className="container-fluid">
-                <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                <nav className="navbar navbar-expand-lg navbar-light">
                     <Link className="navbar-brand" to="/">
                         <img className="logo" src={logo} alt="logo"/>
                     </Link>
@@ -17,10 +18,13 @@ const Header = () => {
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav ml-auto">
                             <li className="nav-item">
-                                <Link className="nav-link" to="#">Pricing</Link>
+                                <span className="cart-icon cursor-pointer"><AiOutlineShoppingCart size={30} /></span>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link disabled" to="#">Disabled</Link>
+                                <Link className="nav-link btn login-btn" to="/login">Login</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link btn signup-btn" to="/signUp">Sign Up</Link>
                             </li>
                         </ul>
                     </div>
