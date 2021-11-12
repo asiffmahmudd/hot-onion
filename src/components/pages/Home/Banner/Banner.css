@@ -1,0 +1,58 @@
+section.banner{
+    background: url('../../../../images/bannerbackground-2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    padding: 200px 0;
+}
+
+.banner-heading{
+    font-size: 2rem;
+}
+
+.banner-content{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.banner-content .form-group{
+    position: relative;
+}
+
+.banner-content .banner-search-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.banner-search-btn{
+    background-color: #f91944 !important;
+    color: white;
+    width: 100px;
+    border-radius: 30px;
+}
+
+.search-input input {
+    border-radius: 30px;
+    padding-left: 20px;
+}
+
+.banner-content .search-input{
+    width: 90%;
+}
+
+
+.banner-heading{
+    font-size: 25px;
+}
+
+@media (min-width: 500px) {
+    .banner-content .search-input{
+        width: 350px;
+    }
+    .banner-heading{
+        font-size: 35px;
+    }
+}
