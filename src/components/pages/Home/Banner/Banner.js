@@ -1,10 +1,11 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 import './Banner.css';
 
 const Banner = () => {
     return (
         <section className="banner">
-            <div className="container-fluid">
+            <Container fluid>
                 <div className="banner-content">
                     <h1 className="banner-heading">Best food waiting for your belly</h1>
                     <div className="search-input">
@@ -14,7 +15,7 @@ const Banner = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </Container>
         </section>
     );
 };
