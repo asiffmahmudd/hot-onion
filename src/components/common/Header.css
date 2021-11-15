@@ -7,12 +7,7 @@
     max-width: 200px;
 }
 
-.navbar-nav{
-    display: flex;
-    align-items: center;
-}
-
-.nav-item .btn{
+.nav-link.btn{
     border-radius: 30px;
     padding: 10px 25px !important;
     display: flex;
@@ -32,18 +27,22 @@
     color: black !important;
 }
 
-@media (min-width: 991px) {
-    .nav-item .login-btn{
+@media (min-width: 767px) {
+    .nav-link.login-btn{
         margin-right: 10px;
     }
-    .nav-item .cart-icon{
+    .nav-link .cart-icon{
         margin-right: 20px;
     }
 }
 
-@media (max-width: 990px) {
-    .nav-item .btn{
+@media (max-width: 766px) {
+    .nav-link.btn{
         margin-top: 10px;
+    }
+    
+    .nav-link{
+        text-align: center;
     }
 }
 
