@@ -16,7 +16,7 @@ const Header = () => {
                         <Nav
                             className="my-2 my-lg-0"
                         >
-                            <Nav.Link c>
+                            <Nav.Link>
                                 <span className="cart-icon cursor-pointer"><AiOutlineShoppingCart size={30} /></span>
                             </Nav.Link>
                             <Nav.Link className="btn login-btn" href="/login">Login</Nav.Link>
