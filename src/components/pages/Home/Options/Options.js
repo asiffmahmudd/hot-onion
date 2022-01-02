@@ -1,20 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import { Tab, Tabs } from 'react-bootstrap';
+import { Container, Row, Tab, Tabs } from 'react-bootstrap';
+import ItemCard from '../ItemCard/ItemCard';
 import './Options.css'
 
 const Options = () => {
 
     const [allItems, setAllItems] = useState([])
+    const [loading, setLoading] = useState(true)
     useEffect(() => {
         fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood')
         .then(res => res.json())
         .then(data => {
-            console.log(data)
-            setAllItems(data)
+            setAllItems(data.meals)
+            setLoading(false)
         })
     }, [])
     
-    console.log(allItems)
 
     return (
         <section className="options mt-5">
@@ -25,7 +26,15 @@ const Options = () => {
                 className="d-flex mt-3 b-0 justify-content-center mb-3"
             >
                 <Tab eventKey="home" title="Home">
-                    asdsdf
+                    <Container>
+                        <Row xs={1} sm={2} md={3} lg={4}>
+                        {
+                            // eslint-disable-next-line array-callback-return
+                            !loading &&
+                            allItems.map(item => <ItemCard key={item.idMeal} item={item} />)
+                        }
+                        </Row>
+                    </Container>
                 </Tab>
                 <Tab eventKey="profile" title="Profile">
                     hjghj
