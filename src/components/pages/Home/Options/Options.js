@@ -7,40 +7,63 @@ const Options = () => {
 
     const [allItems, setAllItems] = useState([])
     const [loading, setLoading] = useState(true)
+    const [category, setCategory] = useState("chicken")
+
     useEffect(() => {
-        fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood')
+        setLoading(true)
+        fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c='+category)
         .then(res => res.json())
         .then(data => {
             setAllItems(data.meals)
             setLoading(false)
         })
-    }, [])
+    }, [category])
     
+    const changeCategory = (e) => {
+        setCategory(e)
+    }
 
     return (
         <section className="options mt-5">
             <Tabs
-                defaultActiveKey="home"
+                defaultActiveKey="chicken"
                 transition={false}
                 id="options"
+                onSelect={changeCategory}
                 className="d-flex mt-3 b-0 justify-content-center mb-3"
             >
-                <Tab eventKey="home" title="Home">
+                <Tab eventKey="chicken" title="Chicken">
                     <Container>
                         <Row xs={1} sm={2} md={3} lg={4}>
                         {
                             // eslint-disable-next-line array-callback-return
                             !loading &&
-                            allItems.map(item => <ItemCard key={item.idMeal} item={item} />)
+                            allItems?.map(item => <ItemCard key={item.idMeal} item={item} />)
                         }
                         </Row>
                     </Container>
                 </Tab>
-                <Tab eventKey="profile" title="Profile">
-                    hjghj
+                <Tab eventKey="beef" title="Beef">
+                    <Container>
+                        <Row xs={1} sm={2} md={3} lg={4}>
+                        {
+                            // eslint-disable-next-line array-callback-return
+                            !loading &&
+                            allItems?.map(item => <ItemCard key={item.idMeal} item={item} />)
+                        }
+                        </Row>
+                    </Container>
                 </Tab>
-                <Tab eventKey="contact" title="Contact">
-                    zxczxc
+                <Tab eventKey="seafood" title="Seafood">
+                    <Container>
+                        <Row xs={1} sm={2} md={3} lg={4}>
+                        {
+                            // eslint-disable-next-line array-callback-return
+                            !loading &&
+                            allItems?.map(item => <ItemCard key={item.idMeal} item={item} />)
+                        }
+                        </Row>
+                    </Container>
                 </Tab>
             </Tabs>
         </section>

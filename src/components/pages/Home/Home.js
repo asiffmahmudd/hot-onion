@@ -5,11 +5,11 @@ import Options from './Options/Options';
 
 const Home = () => {
     return (
-        <>
+        <div className='pb-5'>
             <Header />
             <Banner />
             <Options />
-        </>
+        </div>
     );
 };
 
